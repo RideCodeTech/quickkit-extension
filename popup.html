@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>QuickKit</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand"><div class="mark"><img src="icons/logo96.png" alt="QuickKit"></div><div><strong>QuickKit</strong><span>CopyBox + RightClick Tools</span></div></div>
+      <label class="switch" title="Ativar/desativar histórico"><input id="captureToggle" type="checkbox"><i></i></label>
+    </header>
+
+    <section class="searchbar">
+      <span>⌕</span><input id="search" type="search" placeholder="Buscar no histórico..." autocomplete="off">
+    </section>
+
+    <div class="toolbar">
+      <button id="filterAll" class="active">Tudo</button>
+      <button id="filterPinned">★ Fixados</button>
+      <button id="clearHistory" class="danger">Limpar</button>
+    </div>
+
+    <section id="list" class="list"></section>
+    <section id="empty" class="empty" hidden>
+      <div>📋</div><strong>Nada por aqui ainda.</strong><span>Copie um texto em qualquer página e ele aparece aqui.</span>
+    </section>
+
+    <div class="utility-actions">
+      <button id="resourcesBtn" class="utility-btn" type="button">✨ Recursos</button>
+      <a id="linkedinBtn" class="utility-btn linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Bruno%20Nascimento%20VIP%20Leil%C3%B5es" target="_blank" rel="noopener noreferrer">in Contato</a>
+    </div>
+
+    <footer><span>🔒 Dados salvos somente neste navegador.</span><span id="counter">0 itens</span></footer>
+  </main>
+
+  <div id="resourcesModal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="resourcesTitle">
+      <div class="modal-head">
+        <div>
+          <strong id="resourcesTitle">Tudo que o QuickKit faz</strong>
+          <span>CopyBox + ferramentas rápidas no botão direito</span>
+        </div>
+        <button id="closeResources" class="modal-close" type="button" aria-label="Fechar">×</button>
+      </div>
+      <div class="feature-grid">
+        <div class="feature"><b>📋 CopyBox</b><span>Guarda localmente os textos copiados.</span></div>
+        <div class="feature"><b>⌕ Busca rápida</b><span>Encontre qualquer item do histórico.</span></div>
+        <div class="feature"><b>★ Favoritos</b><span>Favorite no histórico ou direto pelo botão direito.</span></div>
+        <div class="feature"><b>📌 Salvar seleção</b><span>Botão direito → QuickKit → Salvar no CopyBox.</span></div><div class="feature"><b>↗ Copiar de novo</b><span>Um clique devolve o texto ao clipboard.</span></div>
+        <div class="feature"><b>AA MAIÚSCULAS</b><span>Converte o texto selecionado.</span></div>
+        <div class="feature"><b>aa minúsculas</b><span>Converte o texto selecionado.</span></div>
+        <div class="feature"><b>Aa Primeira Letra</b><span>Normaliza capitalização.</span></div>
+        <div class="feature"><b>🧹 Limpar texto</b><span>Remove formatação e espaços extras.</span></div>
+        <div class="feature"><b>↵ Remover quebras</b><span>Transforma blocos em texto contínuo.</span></div>
+        <div class="feature"><b>123 Extrair números</b><span>Ótimo para CPF, CNPJ, telefone e códigos.</span></div>
+        <div class="feature"><b>✉ Extrair e-mails</b><span>Localiza e copia endereços de e-mail.</span></div>
+        <div class="feature"><b>🔗 Extrair links</b><span>Localiza URLs dentro do texto.</span></div>
+        <div class="feature"><b># Contar caracteres</b><span>Conta o tamanho do texto selecionado.</span></div>
+        <div class="feature"><b>🔒 Privacidade</b><span>Histórico salvo somente neste navegador.</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
